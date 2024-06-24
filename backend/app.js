@@ -17,6 +17,9 @@ app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 app.use("/movie", movieRouter);
 app.use("/booking", bookingsRouter);
+app.use("/", (req, res) => {
+  res.send("Welcome to Movie Booking API");
+});
 
 mongoose
   .connect(`${process.env.MONGO_URL}`)
